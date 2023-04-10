@@ -44,13 +44,15 @@
 }
 .pulse:before{
     animation: pulse 2s ease-out infinite;
+
 }
 .pulse:after{
     animation: pulse 2s 1s ease-out infinite;
+    animation-delay: 1s;
 }
 @keyframes pulse{
     100%{
-        transform: scale(3.5);
+        transform: scale(8.5);
         opacity: 0;
     }
 }

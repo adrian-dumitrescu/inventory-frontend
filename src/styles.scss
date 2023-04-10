@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-.login-page{
+.login-page {
     height: 100% !important;
     background-color: #e40134 !important;
-   }
+}
+
+.my-custom-body-class {
+    background-color:#000000;
+}
