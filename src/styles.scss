@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css'; 
 .login-page {
     height: 100% !important;
     background-color: #e40134 !important;
 }
 
 .my-custom-body-class {
-    background-color:#000000;
+    background-color:#6f6f6f;
 }
