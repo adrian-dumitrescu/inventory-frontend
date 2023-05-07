@@ -6,32 +6,22 @@
 </div> -->
 
 
-<app-header *ngIf="isLoggedIn()"></app-header>
+<!-- <app-header *ngIf="isLoggedIn()"></app-header> -->
 
-<!-- <div *ngIf="!isLoggedIn()">
-  <h2>Welcome, {{ user.name }}</h2>
-</div>
-<div class="px-4 pt-5 my-5 text-center border-bottom">
-  <h1 class="display-4 fw-bold">Centered screenshot</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" (click)="login()" *ngIf="!isLoggedIn()">SIGN IN</button>
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4"(click)="logout()" >LOG OUT</button>
-    </div>
-  </div>
-  <div class="overflow-hidden" style="max-height: 30vh;">
-    <div class="container px-5">
-    </div>
-  </div>
-</div>
-<div class="wrapper"> <div class="pulse"> <i class="fa fa-plus"></i> </div> </div> -->
-<!-- <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" (click)="login()" *ngIf="!isLoggedIn()">SIGN IN</button> -->
-
+<mat-toolbar class="mat-elevation-z4" color="primary" *ngIf="isLoggedIn()">
+  <a href="/" class="title">AzureTeach.Net</a>
+  <div class="toolbar-spacer"></div>
+  <span style="padding:10px;">Welcome {{Username}}!</span>
+  <a mat-button [routerLink]="['profile']">Profile</a>
+  <a mat-button [routerLink]="['reports']">Reports</a>
+  <button mat-raised-button *ngIf="!isLoggedIn()" (click)="login()">Login</button>
+  <button mat-raised-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+</mat-toolbar>
+<div style="margin:5px;"></div>
+<router-outlet></router-outlet>
 <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
 <router-outlet *ngIf="!isIframe"></router-outlet>
 
-<app-footer *ngIf="isLoggedIn()"></app-footer>
+<!-- <app-footer *ngIf="isLoggedIn()"></app-footer> -->
 
 <!-- <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
-

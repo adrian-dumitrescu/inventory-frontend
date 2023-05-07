@@ -58,7 +58,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
       AppRoutingModule,
       MsalModule,
       HttpClientModule,
-      MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatAutocompleteModule, MatInputModule,MatFormFieldModule,MatListModule
+      MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatAutocompleteModule, MatInputModule ,MatListModule
     ],
     providers: [
       {

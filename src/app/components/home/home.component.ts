@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private msalService: MsalService, private azureAdService: AzureAdService, private domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-
+    this.getProfile();
+    this.getProfilePicture();
   }
 
   ngAfterViewInit() {
