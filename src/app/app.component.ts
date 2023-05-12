@@ -82,9 +82,9 @@ export class AppComponent implements OnInit, OnDestroy {
           scopes: ['https://graph.microsoft.com/.default'],
         });
 
-        this.sharepointService.getSite(accessToken, 'your-sharepoint-site-url').subscribe((response: any) => {
-            const siteId = response.value[0].id;
-          });
+        // this.sharepointService.getSite(accessToken, 'your-sharepoint-site-url').subscribe((response: any) => {
+        //     const siteId = response.value[0].id;
+        //   });
       }
 
     public isLoggedIn(): boolean {
