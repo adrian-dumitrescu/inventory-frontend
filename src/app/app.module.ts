@@ -41,7 +41,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
   return {
     interactionType: InteractionType.Redirect,
     authRequest: {
-      scopes: ['email' ,'openid', 'profile', 'User.Read',],
+      scopes: ['email' ,'openid', 'profile', 'User.Read', 'Sites.Read.All', 'Sites.ReadWrite.All'],
     },
   }
 }

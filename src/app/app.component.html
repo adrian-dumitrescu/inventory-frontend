@@ -14,7 +14,7 @@
   <span style="padding:10px;">Welcome {{Username}}!</span>
   <a mat-button [routerLink]="['profile']">Profile</a>
   <a mat-button [routerLink]="['reports']">Reports</a>
-  <button mat-raised-button *ngIf="!isLoggedIn()" (click)="login()">Login</button>
+  <button mat-raised-button *ngIf="!isLoggedIn()" (click)="loginRedirect()">Login</button>
   <button mat-raised-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
 </mat-toolbar>
 <div style="margin:5px;"></div>

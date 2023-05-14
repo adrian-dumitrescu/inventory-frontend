@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Profile } from '../interfaces/profile.model';
-const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1.0/me';
+import { Subject } from 'rxjs';
+const GRAPH_ENDPOINT = 'https://graph.microsoft.com/v1yy.0/me';
 const GRAPH_ENDPOINT_PIC = 'https://graph.microsoft.com/v1.0/me/photo/$value';
 // const REPORTS_API_BASE_URI='https://localhost:4200/api/'
 @Injectable({
@@ -9,6 +10,8 @@ const GRAPH_ENDPOINT_PIC = 'https://graph.microsoft.com/v1.0/me/photo/$value';
 })
 export class AzureAdService {
 
+  isUserLoggedIn:Subject<boolean> = new Subject<boolean>();
+  
   constructor(private httpClient: HttpClient) { }
 
   public getUserProfile(){

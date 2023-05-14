@@ -17,12 +17,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   loginDisplay = false;
   profile!: Profile;
   profilePic!: SafeResourceUrl;
+  accessToken: any;
 
   constructor(private msalService: MsalService, private azureAdService: AzureAdService, private domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getProfile();
     this.getProfilePicture();
+    console.log(this.accessToken);
   }
 
   ngAfterViewInit() {
@@ -60,6 +62,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public loginPopup() {
     this.msalService.loginPopup().subscribe((response: AuthenticationResult) => {
       this.msalService.instance.setActiveAccount(response.account)
+      this.accessToken = response.accessToken;
+      console.log(this.accessToken);
     });
     // this.msalService.loginPopup()
     //         .subscribe({
@@ -83,9 +87,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.msalService.instance.getActiveAccount() != null;
   }
 
-  public logout() {
-    this.msalService.logout();
 
+  public logout() {
+    sessionStorage.clear();
+    localStorage.clear();
+    this.msalService.logout();
     // Refresh the page
     window.location.reload();
 
